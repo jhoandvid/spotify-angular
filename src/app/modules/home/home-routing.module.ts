@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent } from '@modules/home/pages/home-page/home-page.component';
+
+
 
 const routes: Routes = [
-  {
-    path: ':username',
-    component: HomePageComponent
-
-  }
+    {
+      path: 'tracks',
+      loadChildren:()=>import("@modules/tracks/tracks.module").then(m=>m.TracksModule)
+    },
+    {
+      path: 'favorites',
+      loadChildren:()=>import("@modules/history/history.module").then(m=>m.HistoryModule)
+    },
+    {
+      path: 'history',
+      loadChildren:()=>import("@modules/favorites/favorites.module").then(m=>m.FavoritesModule)
+    }
 ];
 
 @NgModule({
