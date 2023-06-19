@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TracksModel } from '@core/models/tracks.model';
 
 @Component({
   selector: 'app-media-player',
@@ -7,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class MediaPlayerComponent {
 
-  mockCover:any={
-    cover:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Javier_Beret.png/330px-Javier_Beret.png',
+  mockCover:TracksModel={
+    cover: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Javier_Beret.png/330px-Javier_Beret.png',
     album: 'Resilencia',
-    name: 'Romperme más'
+    name: 'Romperme más',
+    url: 'http://localhost/track.mp3',
+    _id: 1,
   }
 
 }
